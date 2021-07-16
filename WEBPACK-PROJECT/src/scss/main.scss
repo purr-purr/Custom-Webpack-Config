@@ -1,0 +1,311 @@
+// @import '../css/normalize.css';
+// @import '../css/media.css';
+// @import '../css/fonts.css';
+
+/* example media query */
+
+/* @media (--xs-only) {
+  .class {
+    color: red;
+  }
+}
+
+.class {
+  @media (--sm-only) {
+    border: 5px solid aqua;
+  }
+}
+
+@media (--xs-only) { }
+@media (--sm-only) { }
+@media (--md-only) { }
+@media (--lg-only) { } */
+
+/* \example media query */
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999999;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #333;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+  0%,
+  100% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+
+// SYSTEM STYLE
+
+html {
+  font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	overflow: hidden;
+	font-style: normal;
+	color: #333;
+	background-color: #fff;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a, a:focus, a:hover, a:active a:visited {
+	outline: 0;
+	color: inherit;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: bold;
+	color: #333;
+  line-height: 1.1;
+}
+
+h1 {
+	font-size: 56px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.1;
+	color: #333;
+}
+
+input {
+	width: 387px; 
+  height: 40px;
+  padding: 0 20px;
+  border: 1px solid #DADADA;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color ease-in-out 0s;
+	transition-delay: 5000s;
+}
+
+input:invalid {
+	border-color: #FF2727;
+}
+
+input::placeholder {
+  color: #333;
+}
+
+input:disabled,
+select:disabled,
+option:disabled,
+textarea:disabled {
+	background-color: #E9E9E9;
+}
+
+select {
+  width: 387px;
+  height: 40px;
+  padding: 0 37px 0 20px;
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid #DADADA;
+  // background: url("../img/system/icon/select__arrow-down.svg") no-repeat center;
+  background-size: 16px 8px;
+  -webkit-appearance: none;
+  background-position-x: 97%;
+  cursor: pointer;
+}
+
+textarea {
+	padding: 7px 20px;
+	background-color: transparent;
+	border: 1px solid #DADADA;
+	color: #333;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+textarea::placeholder {
+	color: #333;
+}
+
+input:focus, input:active,
+select:focus, select:active,
+textarea:focus, textarea:active {
+	border: 1px solid #ffd500;
+}
+
+/* Убираем стандартный маркер Chrome */
+details summary::-webkit-details-marker {
+	display: none
+}
+/* Убираем стандартный маркер Firefox */
+details > summary {
+	list-style: none;
+}
+
+:active, :focus {
+	outline: none;
+}
+
+/* ======================================
+//              main-btn 
+====================================== */
+
+.main-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 178px;
+	width: fit-content;
+	padding: 0 10px;
+	height: 50px;
+	font-size: 16px;
+	color: #333;
+	background-color: #ffd500;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background .6s ease;
+}
+
+.main-btn:hover {
+	transition: background .6s ease;
+	background: #575757;
+	color: #fff;
+}
+
+.main-btn:focus {
+	outline: 0;
+}
+
+@media (max-width: 1024px) {
+	p {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	input {
+		padding: 0 10px;
+		font-size: 15px;
+	}
+	select {
+		padding: 0 37px 0 10px;
+		font-size: 15px;
+	}
+	
+	textarea {
+		padding: 7px 10px;
+		font-size: 15px;
+	}
+  .main-btn {
+		min-width: 135px;
+		height: 40px;
+		font-size: 15px;
+	}
+}
+
+/* ======================================
+//            Layout
+====================================== */
+
+.container {
+	display: flex;
+	max-width: 1222px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.header, .footer  {
+  border: 1px solid red;
+  height: 100px;
+}
+
+body {
+  background: url("../img/favicon/favicon-32x32.png") no-repeat center;
+}
